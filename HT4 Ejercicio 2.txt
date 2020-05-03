@@ -1,0 +1,80 @@
+Una persona desea realizar un muestreo con un número de personas para determinar el porcentaje de niños, jóvenes, adultos y adultos mayores que existen en la zona en donde vive. La categoría se determina en base a la siguiente tabla: 
+CATEGORIA                                      EDAD
+Niño                                                    0-12
+Joven                                                  13-29                                                   
+Adulto                                                  30-59
+Adulto Mayor                                       60 en adelante
+
+Teniendo en cuenta que para el muestreo de personas no será mayor a 50, realice un programa que en primer lugar reciba como dato el número de personas del muestreo y luego por cada persona permita el ingreso de su edad y grabar todo a un archivo. El programa deberá leer los datos del archivo y mostrar como resultado el porcentaje de personas que hay por cada una de las categorías.
+
+#include <iostream>
+
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main ()
+{
+    int x;
+    int ED;
+    float PN;
+    float AN=0;
+    float ANN=0;
+    float PJ;
+    float AJ=0;
+    float AJJ=0;
+    float PA;
+    float AA=0;
+    float AAA=0;
+    float PV;
+    float AV=0;
+    float AVV=0;
+    float PRN;
+    float PRJ;
+    float PRA;
+    float PRV;
+    for (x=1; x<=50; x++)
+    {
+        cout << "Ingrese la Edad de la persona\n";
+        cin >> ED;
+        
+        if (ED>0 && ED<=12) {
+                 cout << "Es un niño\n"
+                 << "Ingrese el peso\n";
+                 cin >> PN;
+                 AN=AN+PN;
+                 ANN=ANN+1;
+                 }
+        if (ED>12 && ED<=29) {
+                  cout << "Es un joven\n"
+                 << "Ingrese el peso\n";
+                 cin >> PJ;
+                 AJ=AJ+PJ;
+                 AJJ=AJJ+1;
+                  }
+        if (ED>29 && ED<=59) {
+                  cout << "Es un adulto\n"
+                 << "Ingrese el peso\n";
+                 cin >> PA;
+                 AA=AA+PA;
+                 AAA=AAA+1;
+                  }
+        if (ED>59) {
+                   cout << "Es un viejo\n"
+                 << "Ingrese el peso\n";
+                 cin >> PV;
+                 AV=AV+PV;
+                 AVV=AVV+1;
+                   }
+        
+        }
+        PRN=AN/ANN;
+        PRJ=AJ/AJJ;
+        PRA=AA/AAA;
+        PRV=AV/AVV;
+        
+        
+    system("pause");
+    return 0;
+}
